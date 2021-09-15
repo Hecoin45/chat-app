@@ -1,0 +1,257 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    width: 99.6vw;
+    background-color: aqua;
+    opacity: 0.8;
+}
+
+.side-bar {
+    background: linear-gradient(187deg, #41295a, #2F0743);
+    width: 25%;
+    height: 100%;
+    float: left;
+}
+
+.title {
+    word-spacing: -10px;
+    height: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 29px;
+    font-weight: bold;
+}
+
+.title p {
+    color: white;
+    font-family: 'Azeret Mono', monospace;
+}
+
+.main-bar {
+    width: 50%;
+    border: 2px solid;
+    background-color: lightgreen;
+}
+
+.main-text-area {
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+#mess-type {
+    display: flex;
+}
+
+.sendLocation {
+    margin-left: 2px;
+    width: 87px;
+    height: 34px;
+    font-size: 10px;
+    background-color: #41295a;
+    color: white;
+}
+
+.mess-box-area {
+    height: 6%;
+    width: 99%;
+}
+
+.btn {
+    margin-left: 2px;
+    width: 87px;
+    font-size: 10px;
+    background-color: #41295a;
+    color: white;
+}
+
+.sendLocation:hover, #mess-type button:hover {
+    cursor: pointer;
+}
+
+#new-div {
+    margin-bottom: 16px;
+}
+
+.names {
+    word-spacing: -7px;
+    font-family: 'Azeret Mono', monospace;
+}
+
+.time {
+    word-spacing: 1px;
+    font-size: 12px;
+    color: #8080808c;
+    font-family: 'Poppins', sans-serif;
+}
+
+.right-side-sec {
+    background-color: #2F0743;
+    width: 25%;
+}
+
+.input-btn {
+    padding: 0px 20px;
+    width: 79%;
+    height: 34px;
+    font-weight: bold;
+}
+
+#message-hidden {
+    height: 94%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+.side-left, .side-right {
+    float: left;
+    width: 25%;
+    border: 2px solid green;
+}
+
+.name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 44px;
+}
+
+.name label {
+    position: relative;
+    right: 72px;
+}
+
+.name input, .room input {
+    width: 216px;
+    height: 35px;
+    padding: 0px 15px;
+}
+
+.room {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.room label {
+    position: relative;
+    right: 52px;
+}
+
+.button-room {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.join-room-btn {
+    width: 111px;
+    height: 33px;
+}
+
+/* join page */
+
+.join-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: aqua;
+}
+
+.join-mess {
+    width: 30%;
+    height: 49%;
+    border: 2px solid;
+    background-color: lightgreen;
+    border-radius: 8px;
+}
+
+.join-mess h1 {
+    font-size: 27px;
+    margin: 0px auto;
+    color: rebeccapurple;
+    display: flex;
+    justify-content: center;
+}
+
+/* main chat page  */
+
+#sideBarss h2 {
+    background-color: darkgray;
+    height: 11vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 39px;
+}
+
+#sideBarss h3 {
+    margin-top: 56px;
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+}
+
+.users {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* list-style: none; */
+    font-size: 17px;
+    margin-top: 13px;
+}
+
+@media only screen and (max-width: 825px) {
+   
+    .join-mess {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .side-right {
+        display: none;
+    }
+    .main-bar {
+        width: 75%;
+    }
+    #sideBarss h2 {
+        font-size: 29px;
+    }
+    .name input, .room input {
+        width: 164px;
+        height: 35px;
+        padding: 0px 15px;
+    }
+    .name label {
+        position: relative;
+        right: 45px;
+    }
+    .room label {
+        position: relative;
+        right: 24px;
+    }
+}
+
+@media only screen and (max-width: 403px) {
+    .side-left {
+        display: none;
+    }
+    .main-bar {
+        width: 100%;
+    }
+}
