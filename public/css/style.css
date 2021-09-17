@@ -9,8 +9,7 @@
     display: flex;
     justify-content: center;
     width: 99.6vw;
-    background-color: aqua;
-    opacity: 0.8;
+    background-color: #1c0c24;
 }
 
 .side-bar {
@@ -36,9 +35,10 @@
 }
 
 .main-bar {
+    border-right: 2px solid black;
     width: 50%;
-    border: 2px solid;
-    background-color: lightgreen;
+    background-color: #f4831b;
+    border-left: 2px solid black;
 }
 
 .main-text-area {
@@ -55,8 +55,10 @@
     width: 87px;
     height: 34px;
     font-size: 10px;
-    background-color: #41295a;
-    color: white;
+    color: black;
+    background: transparent;
+    border: 2px solid;
+    outline: none;
 }
 
 .mess-box-area {
@@ -68,12 +70,26 @@
     margin-left: 2px;
     width: 87px;
     font-size: 10px;
+    color: white;
+    background: transparent;
+    outline: none;
+    border: 2px solid black;
+    color: black;
+}
+
+.btn:hover {
+    cursor: pointer;
     background-color: #41295a;
+    transition: all 1s;
     color: white;
 }
 
 .sendLocation:hover, #mess-type button:hover {
     cursor: pointer;
+    background-color: #41295a;
+    color: white;
+    border: 2px solid black;
+    transition: all 1s;
 }
 
 #new-div {
@@ -85,10 +101,14 @@
     font-family: 'Azeret Mono', monospace;
 }
 
+.names p {
+    font-family: 'Roboto', sans-serif;
+}
+
 .time {
     word-spacing: 1px;
     font-size: 12px;
-    color: #8080808c;
+    color: #808080d6;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -102,6 +122,9 @@
     width: 79%;
     height: 34px;
     font-weight: bold;
+    background: transparent;
+    outline: none;
+    border: 2px solid;
 }
 
 #message-hidden {
@@ -113,7 +136,13 @@
 .side-left, .side-right {
     float: left;
     width: 25%;
-    border: 2px solid green;
+    color: white;
+}
+
+.side-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .name {
@@ -121,18 +150,24 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 44px;
+    margin-top: 22px;
 }
 
 .name label {
     position: relative;
-    right: 72px;
+    right: 69px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .name input, .room input {
     width: 216px;
     height: 35px;
     padding: 0px 15px;
+    background: transparent;
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    border: 2px solid;
+    border-radius: 5px;
 }
 
 .room {
@@ -145,7 +180,8 @@
 
 .room label {
     position: relative;
-    right: 52px;
+    right: 45px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .button-room {
@@ -158,6 +194,17 @@
 .join-room-btn {
     width: 111px;
     height: 33px;
+    background: transparent;
+    outline: none;
+    border: 2px solid;
+}
+
+.join-room-btn:hover {
+    cursor: pointer;
+    background: #1c0c24;
+    color: white;
+    transition: all 1s;
+    border: 2px solid black;
 }
 
 /* join page */
@@ -168,34 +215,38 @@
     align-items: center;
     width: 100%;
     height: 100vh;
-    background-color: aqua;
+    background-color: #1c0c24;
 }
 
 .join-mess {
-    width: 30%;
-    height: 49%;
+    width: 27%;
+    height: 44%;
     border: 2px solid;
-    background-color: lightgreen;
+    background-color: #f4831b;
     border-radius: 8px;
 }
 
 .join-mess h1 {
     font-size: 27px;
     margin: 0px auto;
-    color: rebeccapurple;
+    color: black;
     display: flex;
     justify-content: center;
+    margin-top: 18px;
+    font-family: 'Azeret Mono', monospace;
 }
 
 /* main chat page  */
 
 #sideBarss h2 {
-    background-color: darkgray;
+    background-color: #ffffff2e;
+    color: white;
     height: 11vh;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 39px;
+    font-family: 'Roboto', sans-serif;
 }
 
 #sideBarss h3 {
@@ -203,6 +254,8 @@
     font-size: 32px;
     display: flex;
     justify-content: center;
+    font-family: 'Azeret Mono', monospace;
+    color: #f4831b;
 }
 
 .users {
@@ -210,13 +263,12 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* list-style: none; */
     font-size: 17px;
     margin-top: 13px;
+    color: white;
 }
 
 @media only screen and (max-width: 825px) {
-   
     .join-mess {
         width: 70%;
     }
@@ -236,6 +288,7 @@
         width: 164px;
         height: 35px;
         padding: 0px 15px;
+        font-family: 'Roboto', sans-serif;
     }
     .name label {
         position: relative;

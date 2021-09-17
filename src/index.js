@@ -21,18 +21,18 @@ app.use(express.static(publicDirectory))
 
 
 io.on('connection', (socket) => {
-    socket.on('join', ({ username, room } , callback) => {
-        const {error , user} = addUser({id:socket.id , username ,room})
-        if(error){
-         return callback(error)
+    socket.on('join', ({ username, room }, callback) => {
+        const { error, user } = addUser({ id: socket.id, username, room })
+        if (error) {
+            return callback(error)
         }
 
         socket.join(user.room)
-        socket.emit('message', textMessage('Admin'  ,'welcome everyone'));
-        socket.broadcast.to(user.room).emit('message', textMessage( 'Admin', ` ${user.username} Just Joint The Group`))
-        io.to(user.room).emit('roomData' ,{
-            room:user.room,
-            users:getUserInRoom(user.room)
+        socket.emit('message', textMessage('Admin', 'welcome everyone'));
+        socket.broadcast.to(user.room).emit('message', textMessage('Admin', ` ${user.username} Just Joint The Group`))
+        io.to(user.room).emit('roomData', {
+            room: user.room,
+            users: getUserInRoom(user.room)
         })
         callback()
     })
@@ -46,27 +46,27 @@ io.on('connection', (socket) => {
             return callback('bad words are not allowed')
         }
 
-        io.to(user.room).emit('message', textMessage(user.username ,message));
+        io.to(user.room).emit('message', textMessage(user.username, message));
         callback()
     })
 
 
-    socket.on('sendLocation', (location,callback) => {
+    socket.on('sendLocation', (location, callback) => {
         const user = getUser(socket.id)
 
-        io.to(user.room).emit('locationMessage', locationMessage(user.username , `http://google.com/maps?q=${location.lan},${location.lon}`))
+        io.to(user.room).emit('locationMessage', locationMessage(user.username, `http://google.com/maps?q=${location.lan},${location.lon}`))
         callback()
     })
-    
+
     socket.on('disconnect', () => {
         const user = removeUser(socket.id)
 
-        if(user){
-            io.to(user.room).emit('message' , textMessage( 'Admin' ,` ${user.username} has just left the room`))
-            io.to('roomData' , {
-                room:user.room,
-            users:getUserInRoom(user.room)
-                
+        if (user) {
+            io.to(user.room).emit('message', textMessage('Admin', ` ${user.username} has just left the room`))
+            io.to('roomData', {
+                room: user.room,
+                users: getUserInRoom(user.room)
+
             })
         }
     })
